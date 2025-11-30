@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Formulario -->
+    <record id="view_one_project_form" model="ir.ui.view">
+        <field name="name">one.project.form</field>
+        <field name="model">one.project</field>
+        <field name="arch" type="xml">
+            <form string="Project">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Project Title"/>
+                        <h1><field name="name" placeholder="e.g. Casa Lomas"/></h1>
+                        <label for="slug"/>
+                        <h3><field name="slug" placeholder="casa-lomas-mexico-city"/></h3>
+                    </div>
+                    
+                    <group>
+                        <group string="Info">
+                            <field name="category" placeholder="Residential"/>
+                            <field name="year" placeholder="2024"/>
+                            <field name="location"/>
+                        </group>
+                        <group string="Credits">
+                            <field name="architect"/>
+                            <field name="client_name"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Content">
+                            <group string="Intro (Short)">
+                                <field name="description_short"/>
+                            </group>
+                            <group string="Main Image">
+                                <field name="image_file" widget="image" class="oe_avatar" options="{'size': [200, 200]}"/>
+                                <field name="image_external_url" placeholder="https://..."/>
+                            </group>
+                            <separator string="Full Details (HTML)"/>
+                            <field name="description_long" widget="html" options="{'style-inline': true}"/>
+                        </page>
+                        <page string="Gallery">
+                            <field name="gallery_ids">
+                                <list editable="bottom">
+                                    <field name="image_file" widget="image" options="{'size': [50, 50]}"/>
+                                    <field name="image_external_url"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Lista (List) -->
+    <record id="view_one_project_list" model="ir.ui.view">
+        <field name="name">one.project.list</field>
+        <field name="model">one.project</field>
+        <field name="arch" type="xml">
+            <list string="Projects">
+                <field name="name"/>
+                <field name="category"/>
+                <field name="year"/>
+                <field name="location"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Acción -->
+    <record id="action_one_project" model="ir.actions.act_window">
+        <field name="name">Portfolio Projects</field>
+        <field name="res_model">one.project</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create your first Project!
+          </p>
+        </field>
+    </record>
+
+    <!-- Menús -->
+    <menuitem id="menu_one_project_root" name="App Projects" web_icon="base,static/description/icon.png" sequence="11"/>
+    <menuitem id="menu_one_project_list" name="All Projects" parent="menu_one_project_root" action="action_one_project" sequence="1"/>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Proyecto 1: Casa Lomas -->
+        <record id="proj_casa_lomas" model="one.project">
+            <field name="name">Casa Lomas</field>
+            <field name="slug">casa-lomas-mexico-city</field>
+            <field name="location">Mexico City</field>
+            <field name="category">Residential</field>
+            <field name="year">2024</field>
+            <field name="architect">Studio Lomas</field>
+            <field name="client_name">Private Residence</field>
+            <field name="description_short">A dialogue between raw volcanic stone and modern minimalism.</field>
+            <field name="description_long"><![CDATA[<p>A dialogue between raw volcanic stone and modern minimalism.</p><p>This residential project in the exclusive Lomas de Chapultepec neighborhood explores the relationship between heavy, grounding materials and light, airy spaces.</p><p>The centerpiece is a custom-designed fireplace clad in Black Basalt.</p>]]></field>
+            <field name="image_external_url">/cdmx.png</field>
+        </record>
+
+        <!-- Galería Casa Lomas -->
+        <record id="gal_lomas_1" model="one.project.gallery">
+            <field name="project_id" ref="proj_casa_lomas"/>
+            <field name="image_external_url">/cdmx.png</field>
+        </record>
+        <record id="gal_lomas_2" model="one.project.gallery">
+            <field name="project_id" ref="proj_casa_lomas"/>
+            <field name="image_external_url">/tulum.png</field>
+        </record>
+        <record id="gal_lomas_3" model="one.project.gallery">
+            <field name="project_id" ref="proj_casa_lomas"/>
+            <field name="image_external_url">/san-miguel.png</field>
+        </record>
+
+        <!-- Proyecto 2: Villa Tulum -->
+        <record id="proj_villa_tulum" model="one.project">
+            <field name="name">Villa Tulum</field>
+            <field name="slug">villa-tulum-riviera-maya</field>
+            <field name="location">Riviera Maya</field>
+            <field name="category">Hospitality</field>
+            <field name="year">2023</field>
+            <field name="description_short">Curating energy through massive quartz installations in open spaces.</field>
+            <field name="image_external_url">/tulum.png</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_one_project_public,one.project.public,model_one_project,,1,0,0,0
+access_one_project_user,one.project.user,model_one_project,base.group_user,1,1,1,1
+access_one_project_gallery_public,one.project.gallery.public,model_one_project_gallery,,1,0,0,0
+access_one_project_gallery_user,one.project.gallery.user,model_one_project_gallery,base.group_user,1,1,1,1
